@@ -8,6 +8,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 /**
+ * 流量统计
  * Created by shaolei on 2015/11/11.
  */
 public class TrafficApp {

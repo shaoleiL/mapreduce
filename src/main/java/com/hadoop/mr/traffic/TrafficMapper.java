@@ -8,6 +8,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 /**
+ * 流量统计的mapper
  * Created by shaolei on 2015/11/12.
  */
 public class TrafficMapper extends Mapper<LongWritable, Text, Text, TrafficWritable> {

@@ -6,6 +6,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 
 /**
+ * 流量统计的reduce
  * Created by shaolei on 2015/11/14.
  */
 public class TrafficReduce extends Reducer<Text, TrafficWritable, Text, TrafficWritable> {
@@ -26,5 +27,6 @@ public class TrafficReduce extends Reducer<Text, TrafficWritable, Text, TrafficW
         }
         k3.set(key);
         v3.set(t1, t2, t3, t4);
+        context.write(k3, v3);
     }
 }
