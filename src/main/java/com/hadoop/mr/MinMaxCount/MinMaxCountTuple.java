@@ -54,4 +54,9 @@ public class MinMaxCountTuple implements Writable {
     public void setCount(long count) {
         this.count = count;
     }
+
+    @Override
+    public String toString() {
+        return this.min.getHours() + "\t" + this.max.getHours() + "\t" + this.count;
+    }
 }

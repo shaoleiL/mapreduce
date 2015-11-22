@@ -16,15 +16,15 @@ public class MinMaxCountMapper extends Mapper<Object, Text, Text, MinMaxCountTup
 
     private Text k2 = new Text();
     private MinMaxCountTuple v2 = new MinMaxCountTuple();
-    private final SimpleDateFormat frmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
+    private final SimpleDateFormat frmt = new SimpleDateFormat("HH:mm:ss");
 
     @Override
     protected void map(Object key, Text value, Context context) throws IOException, InterruptedException {
         //Id='8189677' PostId='6881722' Text='have you looked at hadoop?' CreationDate='2011-07030T07:29:33.343' UserId='831878'
         String line = value.toString();
         String[] splited = line.split("\t");
-        String userId = splited[0];
-        String strDate = splited[3];
+        String userId = splited[1];
+        String strDate = splited[0];
         Date creationDate = null;
         try {
             creationDate = frmt.parse(strDate);
